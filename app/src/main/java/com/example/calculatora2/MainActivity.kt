@@ -3,6 +3,7 @@ package com.example.calculatora2
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -73,9 +74,20 @@ class MainActivity : AppCompatActivity() {
         val buttonOptionDecimal: Button = findViewById(R.id.button_decimal)
         listener(buttonOptionDecimal, ".")
 
+        val progBar: ProgressBar = findViewById(R.id.progressBar)
+
         val buttonOptionEnter: Button = findViewById(R.id.button_enter)
         //buttonOptionEnter.setOnClickListener { parseAndCalculation(displayWindow.text.toString()) }
-        buttonOptionEnter.setOnClickListener { mathSolver() }
+        buttonOptionEnter.setOnClickListener {
+            mathSolver()
+            if (progBar.progress < 100)
+            {
+                progBar.progress = progBar.progress + 10
+            } else {
+                progBar.progress = 0
+            }
+
+        }
 
     }
 
@@ -91,6 +103,9 @@ class MainActivity : AppCompatActivity() {
         var currentDisplay = display.text.toString()
         if (currentDisplay.equals("error", true)) {
             display.text = "error".also { return }
+        }
+        else if (currentDisplay.equals("", true)) {
+            display.text = "".also { return }
         }
         val solver = ExpressionParser()
 
