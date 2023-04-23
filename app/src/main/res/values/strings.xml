@@ -10,8 +10,20 @@
     <string name="number_7">7</string>
     <string name="number_8">8</string>
     <string name="number_9">9</string>
+
     <string name="math_add">+</string>
     <string name="math_subtraction">-</string>
     <string name="math_multiplication">*</string>
     <string name="math_division">÷</string>
+
+    <string name="math_decimal">.</string>
+    <string name="option_clear">C</string>
+    <string name="option_enter">=</string>
+
+    <string name="display_nothing"></string>
+
+
+    <string name="helpIconDesc">A help icon to give the user a message to hep them figure out a calculator</string>
+    <string name="textBackgroundBoarderDesc">Boarder to make the output information pop</string>
+    <string name="displayWindowDesc">The window to show the user information</string>
 </resources>
